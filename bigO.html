@@ -42,29 +42,94 @@
 
 						<!-- One -->
 							<section id="one">
-								<div class="inner" style="background-color: whitesmoke; color: black; font-weight: bold; padding: 50px, 50px">
+								<div class="inner" style="background-color: silver; color: black; font-weight: bold; padding: 50px, 50px">
 									<header class="major" style="padding-left: 50px">
 										<h1 style="color: black">Here We "O" Again with BIG O Notation!</h1>
-										<span style="font-weight: normal; font-size: small">April 1, 2020</span>
+										<span style="font-weight: normal; font-size: small">April 2, 2020</span>
 									</header>
 									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
 										First, a bit of trivia - Do you know where we get our words <em>Algebra</em> 
 										and <em>Algorithm</em>? These words can be credited to the Latin forms of Arabic content used by European authors studying 
 										the works of earlier scientists on the subjects of mathematics, astronomy, geography, etc.  
 										Abu Ja'Far Mohammed Ibn Al-Khowarizmi was a member of the House of Wisdom in Bagdhad (between 780 and 850 AD) and
-										the author of one of works quoted by those later European scholars. The word "Algebra" we use today comes from the 
-										title of his book <em>Kitab al-jabr w'al muquabala.</em> The Latin form of Al-Khowarizmi's name became "Algorithm" 
-										and was used to refer to the topic of math using Hindu numerals (Rosen, 2010, p. 192). Now, on to the subject at hand...
+										the author of one of the works quoted by those later European scholars. The word "Algebra" we use today comes from the 
+										title of his book <em>Kitab al-jabr w'al muquabala.</em> The Latin form of Al-Khowarizmi's name became our modern word "Algorithm" 
+										and was used to refer to the topic of math using Hindu numerals (Rosen, 2010, p. 192). Interesting, right? Now, on to the subject at hand...
 									</p>
 									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
 										So what is Big-O Notation, anyway? Well, "Big-O" (sometimes referred to as a Landau symbol) has been in use for well over 100 years, initially
-										in the context of number theory. Within the realm of computer science, Big-O notation was made popular by Donald Knuth, who is the founded the 
+										in the context of number theory. Within the realm of computer science, Big-O notation was made popular by Donald Knuth, who founded the 
 										modern study of computational complexity (Rosen, 2010, p. 208). And for our casual purposes here, that is exactly what Big-O notation describes - 
-										the computational complexity, or "growth," of a function as it relates to time. That is to say, it describes the change in the amount of time it would take a 
-										function (or an algorithm, if you like) to complete its computations given an input of different sizes. 
+										the computational complexity, or "growth," of a function as it relates to time. That is to say, it describes the relative change in the amount of time it would take a 
+										function (or an algorithm, if you like) to complete its computations given input of different sizes, because each step takes some unit of time to perform. 
 									</p>
 									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
-										Paragraph 3   
+										Let's use an example to illustrate this concept. Assume we have an array of integers that contains 20 elements. We develop a function that will start at 
+										the beginning of the array and print each element to the console in order from index zero to index nineteen. How many "steps" would our function need to 
+										perform its task, assuming one step includes everything involved with retrieving the integer from the array and printing it to the console? Well, it 
+										would need to take 20 steps for 20 integers, right? For that function, with that specific array as input, the complexity is "Oh of twenty," or O(20).    
+									</p>
+									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
+										Sounds simple enough, right? If our array had 40 numbers instead of 20, our function would have a Big-O of 40. In fact, our function would need
+										however many steps equal to the number of elements in the array, whether it's 10 or 1,000,000. That "any number" could be described as a variable "N." 
+										For our simple linear function, we could say more generally that it has a time complexity that scales at O(N). The bigger the array, the more steps needed. 
+										It is this idea of how a function <em>scales</em> that makes Big-O useful in computer science.
+									</p>
+									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
+										Let's quickly go through two more examples to illustrate different Big-O estimates for different functions. Assume we had a Map data structure (or a 
+										Dictionary, or Hash table) with key-value pairs to organize the data. Our function take a 'key' input and returns the 'value.' Our data retrieval 
+										function only requires one step, no matter how many items belong in our Map. We could say, therefore, that our function is O(1). In the world of 
+										time complexity (for our purposes here), that's as good as it gets.    
+									</p>
+									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
+										Now let's describe a function that isn't so efficient or straight-forward. Suppose you had a large array of hash value strings for unknown images. Your function takes the hash 
+										value string of a known image and compares it to the hash values in the array, one character at a time, to see if there is a match. The function is designed  
+										to retrieve a hash string from the array, and for each hash string loop through the characters and compare each to the characters of the input hash string 
+										to determine if there is a match. Maybe some hashes are rejected early in the process while others loop through a few characters before rejection. How are 
+										we supposed to account for this unpredictable variation?  
+									</p>
+									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
+										We look at the function instead of the input. Our function contains two loops: one for the array of hashes and one for the characters in each hash. For an 
+										array of <em>N</em> size, we loop <em>N</em> number of times for each element. That makes our function scale at O(N * N), or O(N<sup>2</sup>). 
+										This is not a great time complexity estimate, but is nowhere close to the worst. A common list of Big-O estimates in best-to-worse order is:   
+									</p>
+									<ul style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 75px; padding-right: 50px">
+										<li>O(1)</li>
+										<li>O(log n)</li>
+										<li>O(n)</li>
+										<li>O(n log n)</li>
+										<li>O(n<sup>2</sup>)</li>
+										<li>O(2<sup>n</sup>)</li>
+										<li>O(n!)</li>
+									</ul>
+									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
+										Now, what I've written about Big-O up to this point is what you might call a common understanding of the concept. Strictly speaking, Big-O describes 
+										an upper bound for the time complexity of a function. Meaning, it will perform <em>at least</em> as good as the estimate. This is sometimes referred 
+										to as the worst case, but that can be misleading. Remember our first example, the function that has a Big-O Notation O(N)? Well, it wouldn't be 
+										<em>technically</em> incorrect to describe the same function as O(N<sup>2</sup>), because we know it would at least perform better than that estimate. 
+										Anything worse than O(N) would still be a valid Big-O estimate because of the nature of Big-O being a kind of "equal to or better than" description of 
+										the time estimate of the function.   
+									</p>
+									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
+										Confused? Look at it this way: If I weigh 150 pounds, I would be correct to say "I weigh less than or equal to 150 pounds." That statement would be a 
+										true statement. It would be equally true if I said, "I weigh less than or equal to 5 metric tons." It's not very useful to you if you wanted to know 
+										my actual weight, but the statement is no less true. Big-O can be used in a similar manner.   
+									</p>
+									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
+										However, Big-O isn't used like that in normal circumstances. It is used to describe more of an <em>expected</em> time complexity from a function. In 
+										mathematics, that is actually Big-Theta Notation. You could accurately say that the Big-O notation used everyday in computer science applications is 
+										really Big-Theta. But, for whatever reason, Big-O gets the glory in common use and no one seems interested in changing.  
+									</p>
+									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
+										But wait, we still have Big-Omega to talk about, right? If Big-O describes the upper bound of a function's time complexity, Big-Omega describes the 
+										lower bound. It basically describes that a function will perform "no better than" the given estimate. You could call it a best case scenario, and 
+										that's close enough to understand the concept for most purposes. Big-Omega isn't used for the same reason true Big-O isn't used -- the best and 
+										worst cases are rare occurences in the real world. Big-Theta takes into account both the Big-O and the Big-Omega to give a tight bound on a function's 
+										run time as an expected or average case scenario.   
+									</p>
+									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
+										This article really only scratches the surface of computational/time complexity estimates and notation. Hopefully, I've demystified the concept enough 
+										to move forward into understanding its importance and application when considering how to approach a coding problem.   
 									</p>
 								</div>
 								<span style="font-weight: normal; font-size: small; margin-left: 140px; font-weight: bold">References:</span>
