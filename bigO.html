@@ -77,7 +77,7 @@
 									</p>
 									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
 										Let's quickly go through two more examples to illustrate different Big-O estimates for different functions. Assume we had a Map data structure (or a 
-										Dictionary, or Hash table) with key-value pairs to organize the data. Our function take a 'key' input and returns the 'value.' Our data retrieval 
+										Dictionary, or Hash table) with key-value pairs to organize the data. Our function takes a 'key' input and returns the 'value.' Our data retrieval 
 										function only requires one step, no matter how many items belong in our Map. We could say, therefore, that our function is O(1). In the world of 
 										time complexity (for our purposes here), that's as good as it gets.    
 									</p>
@@ -91,9 +91,9 @@
 									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
 										We really don't have to worry about being perfectly specific. For Big-O, we only worry about the largest determining factor(s) - those that 
 										make a real difference in performance. Our function contains two loops; one for the array of hashes and one for the characters in each hash. For an 
-										array of <em>N</em> size we loop <em>M</em> number of times for each element in <em>N</em>according to how long our comparison string is. That makes our 
-										function scale at O(N * M), or O(NM). If we had a similar nested-loop function with the same argument for each loop, it would be O(N<sup>2</sup>).
-										This isn't the best runtime scenario, but is nowhere close to the worst. A common list of Big-O estimates in best-to-worse order is:   
+										array of <em>N</em> size we loop <em>M</em> number of times for each element in the array according to how long our comparison string is. That makes our 
+										function scale at O(N * M), or O(NM). If we had a similar nested-loop function with the same input for each loop, it would be O(N<sup>2</sup>).
+										This isn't the best runtime scenario, but it's nowhere close to the worst. A common list of Big-O estimates in best-to-worse order includes:   
 									</p>
 									<ul style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 75px; padding-right: 50px">
 										<li>O(1)</li>
@@ -103,6 +103,7 @@
 										<li>O(n<sup>2</sup>)</li>
 										<li>O(2<sup>n</sup>)</li>
 										<li>O(n!)</li>
+										<li>and many others!</li>
 									</ul>
 									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
 										Now, what I've written about Big-O up to this point is what you might call a common understanding of the concept. Strictly speaking, Big-O describes 
