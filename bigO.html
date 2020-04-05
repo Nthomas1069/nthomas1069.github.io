@@ -89,9 +89,11 @@
 										we supposed to account for this unpredictable variation?  
 									</p>
 									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
-										We look at the function instead of the input. Our function contains two loops: one for the array of hashes and one for the characters in each hash. For an 
-										array of <em>N</em> size, we loop <em>N</em> number of times for each element. That makes our function scale at O(N * N), or O(N<sup>2</sup>). 
-										This is not a great time complexity estimate, but is nowhere close to the worst. A common list of Big-O estimates in best-to-worse order is:   
+										We really don't have to worry about being perfectly specific. For Big-O, we only worry about the largest determining factor(s) - those that 
+										make a real difference in performance. Our function contains two loops; one for the array of hashes and one for the characters in each hash. For an 
+										array of <em>N</em> size we loop <em>M</em> number of times for each element in <em>N</em>according to how long our comparison string is. That makes our 
+										function scale at O(N * M), or O(NM). If we had a similar nested-loop function with the same argument for each loop, it would be O(N<sup>2</sup>).
+										This isn't the best runtime scenario, but is nowhere close to the worst. A common list of Big-O estimates in best-to-worse order is:   
 									</p>
 									<ul style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 75px; padding-right: 50px">
 										<li>O(1)</li>
@@ -128,16 +130,14 @@
 										run time as an expected or average case scenario.   
 									</p>
 									<p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal; padding-left: 50px; padding-right: 50px">
-										This article really only scratches the surface of computational/time complexity estimates and notation. Hopefully, I've demystified the concept enough 
+										This article really only scratches the surface of computational/time complexity estimates and notation. Hopefully, I've introduced the concept sufficiently 
 										to move forward into understanding its importance and application when considering how to approach a coding problem.   
 									</p>
 								</div>
 								<span style="font-weight: normal; font-size: small; margin-left: 140px; font-weight: bold">References:</span>
 									<p style="font-weight: normal; font-size: small; margin-left: 140px">Rosen, Kenneth. (2012). Discrete Mathematics and Its Applications (7th ed.). McGraw-Hill: New York</p>
 							</section>
-
 					</div>
-
 
 				<!-- Footer -->
 					<footer id="footer">
